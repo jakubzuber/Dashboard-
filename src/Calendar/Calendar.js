@@ -1,18 +1,19 @@
 import FullCalendar from "@fullcalendar/react";
 import daygrid from "@fullcalendar/daygrid";
-import { useEffect } from "react";
 import { StyledCalendar } from './styled'
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCalendarData, selectCalendarInfo } from "./calendarSlice";
+import { /*useDispatch,*/ useSelector } from "react-redux";
+//import { useEffect } from "react";
+import { /*fetchCalendarData,*/ selectCalendarInfo } from "./calendarSlice";
 
 const CalendarSite = () => {
   const { calendar } = useSelector(selectCalendarInfo)
+/*
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(fetchCalendarData())
   }, [dispatch])
-
+*/
   return (
     <StyledCalendar>
       <FullCalendar

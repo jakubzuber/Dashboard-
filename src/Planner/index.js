@@ -1,20 +1,21 @@
 import { DndContext, KeyboardSensor, MouseSensor, TouchSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import { useEffect, useState } from "react";
+import { /*useEffect,*/ useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { changeOrder, changeRamp, fetchPlanerData, selectPlanerRamp, setSort } from "./planerSlice";
+import { changeOrder, changeRamp, /*fetchPlanerData,*/ selectPlanerRamp, setSort } from "./planerSlice";
 import { updateDatabaseRamp } from "./updatesToDatabase";
 import Droppable from "./Droppable"
 import { Container, DndContexStyle, RampTitle } from './styled'
 import { snapCenterToCursor } from "@dnd-kit/modifiers";
 
 const Planer = () => {
+  
     const dispatch = useDispatch();
-
+/*
     useEffect(() => {
         dispatch(fetchPlanerData())
     }, [dispatch]);
-
+*/
     const [currentRamp, setCurrentRamp] = useState({ ID: null, RAMP: "" });
 
     const r = 'noRamp'

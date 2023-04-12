@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 
 export const Main = styled.form`
     margin: 0 auto;
@@ -14,51 +13,12 @@ export const Main = styled.form`
     }
   `;
   
-  export const StyledNavList = styled.ul`
-    padding: 5px;
-    margin: 0px;
-    display: flex;
-    justify-content: flex-end; 
-    font-size: 10px;
-    list-style-type: none;
-    background-color: #0057d9;
-    width: 100%;
-    
-
-    @media (max-width: 868px){
-        height: 60px;
-        position: fixed;
-        top: 0;
-    }
-    @media (height: 1080px) {
-        display: none;
-    }
-`;
-
-export const StyledNavListItem = styled.li`
-    margin: 10px;
-`;
-
-export const StyledNavLink = styled(NavLink)`
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px;
-    color: white;
-    :hover {
-        cursor: pointer;
-    }
-    
-    :focus {
-        cursor: pointer;
-        background-color: rgb(80, 125, 221);
-        border-radius: 10px;
-    }
-`;
 
 export const MainContent = styled.div`
     margin-bottom: 10px;
     margin-left: 0;
-    position: relative;
+    //position: relative;
+    max-width: 1000px;
     display:grid;
     grid-template-columns: 1fr 1fr;
     grid-row: auto auto;

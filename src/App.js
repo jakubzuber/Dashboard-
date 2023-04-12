@@ -1,42 +1,51 @@
-import { HashRouter, Routes, Route } from "react-router-dom"
-import { DoubleLine, DoubleLinea, Main } from './styled';
+import { HashRouter, Routes, Route, NavLink } from "react-router-dom"
+import { Main } from './styled';
 import Today from './Today';
-import Tomorrow from "./Tomorrow";
 import CalendarSite from './Calendar/Calendar'
 import Planer from './Planner/'
-import { StyledNavLink, StyledNavListItem, StyledNavList } from "./styled";
+// MUI
+import { Sidebar, Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import WarehouseIcon from '@mui/icons-material/Warehouse';
+import AddToQueueIcon from '@mui/icons-material/AddToQueue';
 
 function App() {
+  const { collapseSidebar } = useProSidebar();
+
+
   return (
-    <HashRouter>
-      <Main>
-        <nav>
-          <StyledNavList>
-            <StyledNavListItem>
-              <StyledNavLink to="/dzisiaj">Dziś</StyledNavLink>
-            </StyledNavListItem>
-            <StyledNavListItem>
-              <StyledNavLink to="/jutro">Jutro</StyledNavLink>
-            </StyledNavListItem>
-            <StyledNavListItem>
-              <StyledNavLink to="/kalendarz">Kalendarz</StyledNavLink>
-            </StyledNavListItem>
-            <StyledNavListItem>
-              <StyledNavLink to="/planer">Planer</StyledNavLink>
-            </StyledNavListItem>
-          </StyledNavList>
-          <DoubleLine>.</DoubleLine>
-          <DoubleLinea>.</DoubleLinea>
+    
+      <HashRouter>
+        <div id="app" style={({ height: "100vh" })}>
+        <Sidebar style={{ height: "100vh" }} >
+          <Menu>
+            <MenuItem
+              icon={<MenuOutlinedIcon />}
+              onClick={() => {
+                collapseSidebar();
+              }}
+              style={{ textAlign: "center" }}
+            >
+              {""}
+              <h2>Jakub</h2>
+            </MenuItem>
+            <NavLink to="/"><MenuItem icon={<HomeOutlinedIcon />}>Strona główna</MenuItem></NavLink>
+            <NavLink to="/dzisiaj"><MenuItem icon={<WarehouseIcon />}>Rozładunki na dziś</MenuItem></NavLink>
+            <NavLink to="/kalendarz"><MenuItem icon={<CalendarTodayOutlinedIcon />}>Kalendarz</MenuItem></NavLink>
+            <NavLink to="/planer"><MenuItem icon={<AddToQueueIcon />}>Planer rozładunków</MenuItem></NavLink>
+          </Menu>
+        </Sidebar >
+        </div >
           <Routes>
-            <Route path="/dzisiaj" element={<Today />}></Route>
-            <Route path="/jutro" element={<Tomorrow />}></Route>
             <Route path="/kalendarz" element={<CalendarSite />}></Route>
+            <Route path="/dzisiaj" element={<Today />}></Route>
             <Route path="/planer" element={<Planer />} />
             <Route path="/" element={<Today />}></Route>
           </Routes>
-        </nav>
-      </Main>
-    </HashRouter>
+      </HashRouter>
+   
   );
 }
 
