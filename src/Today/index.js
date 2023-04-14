@@ -15,7 +15,6 @@ import { fetchColDelData } from '../Slices/colDelSlice';
 */
 import SelfCollection from './SelfColDel/SelfCollection';
 import SelfDelivery from './SelfColDel/SelfDelivery';
-import { MainContent } from '../styled';
 
 
 const Today = () => {
@@ -32,14 +31,14 @@ const Today = () => {
   }, [dispatch])
 */
   return (
-    <MainContent>
+    <>
       <Imports></Imports>
       <Exports></Exports>
       <KrArrivals></KrArrivals>
       <KrLoadings></KrLoadings>
       <SelfDelivery></SelfDelivery>
       <SelfCollection></SelfCollection>
-    </MainContent>
+      </>
   )
 };
 

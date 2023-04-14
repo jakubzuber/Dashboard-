@@ -7,7 +7,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     /* additions here*/
     height: 100vh;
-    background: black;
+    background: #141b2d;
 }
 
 code {
@@ -22,3 +22,5 @@ html {
 *, ::after, ::before {
   box-sizing: border-box;
 }
+
+
